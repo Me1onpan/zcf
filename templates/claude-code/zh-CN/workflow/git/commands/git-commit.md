@@ -1,7 +1,7 @@
 ---
 description: 仅用 Git 分析改动并自动生成 conventional commit 信息（可选 emoji）；必要时建议拆分提交，默认运行本地 Git 钩子（可 --no-verify 跳过）
 allowed-tools: Read(**), Exec(git status, git diff, git add, git restore --staged, git commit, git rev-parse, git config), Write(.git/COMMIT_EDITMSG)
-argument-hint: [--no-verify] [--all] [--amend] [--signoff] [--emoji] [--scope <scope>] [--type <type>]
+argument-hint: [--no-verify] [--all] [--amend] [--signoff] [--emoji] [--type <type>] [--scope <scope>]
 # examples:
 #   - /git-commit                           # 分析当前改动，生成提交信息
 #   - /git-commit --all                     # 暂存所有改动并提交
@@ -132,25 +132,25 @@ argument-hint: [--no-verify] [--all] [--amend] [--signoff] [--emoji] [--scope <s
 **Good (使用 --emoji)**
 
 ```text
-- ✨ feat(ui): add user authentication flow
-- 🐛 fix(api): handle token refresh race condition
-- 📝 docs: update API usage examples
-- ♻️ refactor(core): extract retry logic into helper
-- ✅ test: add unit tests for rate limiter
-- 🔧 chore: update git hooks and repository settings
-- ⏪️ revert: revert "feat(core): introduce streaming API"
+✨ feat(ui): add user authentication flow
+🐛 fix(api): handle token refresh race condition
+📝 docs: update API usage examples
+♻️ refactor(core): extract retry logic into helper
+✅ test: add unit tests for rate limiter
+🔧 chore: update git hooks and repository settings
+⏪️ revert: revert "feat(core): introduce streaming API"
 ```
 
 **Good (不使用 --emoji)**
 
 ```text
-- feat(ui): add user authentication flow
-- fix(api): handle token refresh race condition
-- docs: update API usage examples
-- refactor(core): extract retry logic into helper
-- test: add unit tests for rate limiter
-- chore: update git hooks and repository settings
-- revert: revert "feat(core): introduce streaming API"
+feat(ui): add user authentication flow
+fix(api): handle token refresh race condition
+docs: update API usage examples
+refactor(core): extract retry logic into helper
+test: add unit tests for rate limiter
+chore: update git hooks and repository settings
+revert: revert "feat(core): introduce streaming API"
 ```
 
 **Good (包含 Body)**

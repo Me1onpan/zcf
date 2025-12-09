@@ -1,7 +1,7 @@
 ---
 description: Analyze changes with Git only and auto-generate conventional commit messages with optional emoji; suggests splitting commits when needed, runs local Git hooks by default (use --no-verify to skip)
 allowed-tools: Read(**), Exec(git status, git diff, git add, git restore --staged, git commit, git rev-parse, git config), Write(.git/COMMIT_EDITMSG)
-argument-hint: [--no-verify] [--all] [--amend] [--signoff] [--emoji] [--scope <scope>] [--type <type>]
+argument-hint: [--no-verify] [--all] [--amend] [--signoff] [--emoji] [--type <type>] [--scope <scope>]
 # examples:
 #   - /git-commit                           # Analyze current changes, generate commit message
 #   - /git-commit --all                     # Stage all changes and commit
@@ -132,25 +132,25 @@ This command works **without any package manager/build tools**, using only **Git
 **Good (with --emoji)**
 
 ```text
-- ✨ feat(ui): add user authentication flow
-- 🐛 fix(api): handle token refresh race condition
-- 📝 docs: update API usage examples
-- ♻️ refactor(core): extract retry logic into helper
-- ✅ test: add unit tests for rate limiter
-- 🔧 chore: update git hooks and repository settings
-- ⏪️ revert: revert "feat(core): introduce streaming API"
+✨ feat(ui): add user authentication flow
+🐛 fix(api): handle token refresh race condition
+📝 docs: update API usage examples
+♻️ refactor(core): extract retry logic into helper
+✅ test: add unit tests for rate limiter
+🔧 chore: update git hooks and repository settings
+⏪️ revert: revert "feat(core): introduce streaming API"
 ```
 
 **Good (without --emoji)**
 
 ```text
-- feat(ui): add user authentication flow
-- fix(api): handle token refresh race condition
-- docs: update API usage examples
-- refactor(core): extract retry logic into helper
-- test: add unit tests for rate limiter
-- chore: update git hooks and repository settings
-- revert: revert "feat(core): introduce streaming API"
+feat(ui): add user authentication flow
+fix(api): handle token refresh race condition
+docs: update API usage examples
+refactor(core): extract retry logic into helper
+test: add unit tests for rate limiter
+chore: update git hooks and repository settings
+revert: revert "feat(core): introduce streaming API"
 ```
 
 **Good (with Body)**
